@@ -12,3 +12,20 @@ document.querySelectorAll(".item").forEach((n) =>
     navItems.classList.remove("active");
   })
 );
+
+const buttons = document.querySelectorAll(".faq-toggle");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    button.parentNode.classList.toggle("active");
+  });
+});
+
+const navBar = document.querySelector(".nav-bar");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navBar.classList.add("white-nav");
+  } else if (window.scrollY <= 50) {
+    navBar.classList.remove("white-nav");
+  }
+});
